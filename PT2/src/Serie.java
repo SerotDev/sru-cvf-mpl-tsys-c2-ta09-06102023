@@ -17,6 +17,15 @@ public class Serie {
 		
 	}
 	
+	public Serie(String titulo, String creador) {
+		
+		this.titulo = titulo;
+		this.temporadas = 3;
+		this.entregado = false;
+		this.genero = "";
+		this.creador = creador;
+	}
+	
 	public Serie(String titulo, int temporadas, boolean entregado, String genero, String creador) {
 		
 		this.titulo = titulo;
@@ -25,11 +34,6 @@ public class Serie {
 		this.genero = genero;
 		this.creador = creador;
 	}
-	
-	Serie defecto = new Serie();
-	Serie dark = new Serie("Dark", temporadas, entregado, genero, "Random");
-	Serie darki = new Serie("Dark", 5, entregado, "Drama", "Random");
-	
 	
 	public String getTitulo() {
 		return titulo;
