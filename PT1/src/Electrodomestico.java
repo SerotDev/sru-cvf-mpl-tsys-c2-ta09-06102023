@@ -103,4 +103,12 @@ public class Electrodomestico {
 		return 0;
 	}
 
+	@Override
+	public String toString() {
+		return "Electrodomestico [precioBase=" + String.format("%.2f", precioBase) + ", precioFinal=" + String.format("%.2f",precioFinal()) + ", color=" + color + ", consumoEnergetico="
+				+ consumoEnergetico + ", peso=" + peso + "]";
+	}
+	
+	
+
 }
