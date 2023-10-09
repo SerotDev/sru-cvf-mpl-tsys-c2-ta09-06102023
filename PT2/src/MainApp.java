@@ -44,6 +44,24 @@ public class MainApp {
 		}
 		
 		// Mostramos el videojuego con mas horas y la serie con más temporadas
+		int posicion_mayor = 0;
+		int valor_mayor = -1;
+		for (int i = 0; i < array_series.length; i++) {
+			if (array_series[i].getTemporadas() > valor_mayor) {
+				valor_mayor = array_series[i].getTemporadas();
+				posicion_mayor = i;
+			}
+		}
+		System.out.println("SERIE CON TEMPORADA MAYOR:\n" + array_series[posicion_mayor].toString());
+		posicion_mayor = 0; //reseteamos variable
+		valor_mayor = -1; //reseteamos variable
+		for (int i = 0; i < array_videojuegos.length; i++) {
+			if (array_videojuegos[i].getHorasEstimadas() > valor_mayor) {
+				valor_mayor = array_videojuegos[i].getHorasEstimadas();
+				posicion_mayor = i;
+			}
+		}
+		System.out.println("VIDEOJUEGO CON HORAS ESTIMADAS MAYOR:\n" + array_videojuegos[posicion_mayor].toString());
 		
 	}
 
