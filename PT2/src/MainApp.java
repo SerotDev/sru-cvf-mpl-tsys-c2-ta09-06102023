@@ -28,7 +28,7 @@ public class MainApp {
 		
 		// Llenamos series
 		array_series[0] = new Serie();
-		array_series[1] = new Serie("Cosas Extrañas", "Netflix");
+		array_series[1] = new Serie("Stranger Things", "Netflix");
 		array_series[2] = new Serie("Dark", "Netflix");
 		array_series[3] = new Serie("Futurama", 11, false, "Sci-Fi", "Disney");
 		array_series[4] = new Serie("The Mandalorian", 2, false, "Sci-Fi", "Disney");
@@ -80,6 +80,20 @@ public class MainApp {
 				array_series[i].entregar();
 			}
 		}
+	}
+	
+	private static int compareSerie(Serie[] array_series) {
+		
+		int compare = 0;
+		
+		for (int i = 0; i < array_series.length; i++) {
+			
+		
+		}
+
+		
+		return compare;
+		
 	}
 
 }

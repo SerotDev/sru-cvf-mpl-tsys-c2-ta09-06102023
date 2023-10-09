@@ -1,4 +1,4 @@
-public class Serie implements Entregable {
+public class Serie extends Producto {
   
 	private String titulo;
 	private int temporadas;
@@ -73,28 +73,13 @@ public class Serie implements Entregable {
 				+ genero + ", creador= " + creador + "]";
 	}
 	
-	public void entregar() {
-		this.entregado = true;
-	}
-	
-	public void devolver() {
-		this.entregado = false;
-	}
-	
-	public boolean isEntregado() {
-		return this.entregado;
-	}
-	
+	@Override
 	public int compareTo(Object a) {
-		if (a instanceof Videojuego) {
-			Videojuego newVideojuego = (Videojuego) a;
-			return Integer.compare(this.temporadas, newVideojuego.getHorasEstimadas());
-		}
-		if (a instanceof Serie) {
-			Serie newSerie = (Serie) a;
-			return Integer.compare(this.temporadas, newSerie.getTemporadas());
-		}
-		return 0;
-	}
+        if (a instanceof Serie) {
+            Serie newSerie = (Serie) a;
+            return Integer.compare(this.temporadas, newSerie.getTemporadas());
+        }
+        return 0;
+    }
 
 }
