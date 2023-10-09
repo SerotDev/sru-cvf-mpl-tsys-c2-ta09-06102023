@@ -43,6 +43,8 @@ public class MainApp {
 			}
 		}
 		
+		// Mostramos el videojuego con mas horas y la serie con más temporadas
+		
 	}
 
 }
