@@ -1,5 +1,5 @@
 
-public class Videojuego {
+public class Videojuego implements Entregable {
 	
 	private String titulo;
 	private int horasEstimadas;
@@ -97,15 +97,13 @@ public class Videojuego {
 	}
 	
 	public int compareTo(Object a) {
-		if (a instanceof Entregable) {
-			if (a instanceof Videojuego) {
-				Videojuego newVideojuego = (Videojuego) o;
-				return Integer.compare(this.horasEstimadas, newVideojuego.getHorasEstimadas());
-			}
-			if (a instanceof Serie) {
-				Serie newSerie = (Serie) o;
-				return Integer.compare(this.horasEstimadas, newSerie.getNumeroTemporadas());
-			}
+		if (a instanceof Videojuego) {
+			Videojuego newVideojuego = (Videojuego) a;
+			return Integer.compare(this.horasEstimadas, newVideojuego.getHorasEstimadas());
+		}
+		if (a instanceof Serie) {
+			Serie newSerie = (Serie) a;
+			return Integer.compare(this.horasEstimadas, newSerie.getTemporadas());
 		}
 		return 0;
 	}
