@@ -35,11 +35,17 @@ public class Cine {
 			int columna = rand.nextInt(this.columnas);
 			
 			Asiento asiento = asientos[fila][columna];
-			if (asiento.isOcupado() && espectador.getEdad() >= pelicula.getEdadMinima() && espectador.getDinero() >= precio) {
+			if (!asiento.isOcupado() && espectador.getEdad() >= pelicula.getEdadMinima() && espectador.getDinero() >= precio) {
 				asiento.ocupar();
 				System.out.println(espectador.getNombre() + " ha ocupado el asiento " + asiento.getFila() + asiento.getColumna());
 				sentado = true;
 			}
+			
+			if (espectador.getEdad() < pelicula.getEdadMinima() || espectador.getDinero() < precio) {
+				System.out.println(espectador.getNombre() + " no ha ocupado ningun asiento, no cumple con los requisitos edad " + pelicula.getEdadMinima() + "/" +  espectador.getEdad() + " dinero " + precio +  "/" +  espectador.getDinero());
+				break;
+			}
+			
 		}
 	}
 	
