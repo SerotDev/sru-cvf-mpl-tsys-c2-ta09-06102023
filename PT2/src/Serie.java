@@ -1,36 +1,27 @@
 public class Serie extends Producto {
   
-	private String titulo;
 	private int temporadas;
-	private boolean entregado;
-	private String genero;
 	private String creador;
 	
+	private static final int HORAS_ESTIMADAS_DEFAULT = 3;
+	private static final boolean ENTREGADO_DEFAULT = false;
+	
 	public Serie() {
-		
-		this.titulo = "";
-		this.temporadas  = 3;
-		this.entregado = false;
-		this.genero = "";
+		super("", ENTREGADO_DEFAULT, "");
+		this.temporadas  = HORAS_ESTIMADAS_DEFAULT;
 		this.creador = "";
 		
 	}
 	
 	public Serie(String titulo, String creador) {
-		
-		this.titulo = titulo;
-		this.temporadas = 3;
-		this.entregado = false;
-		this.genero = "";
+		super(titulo, ENTREGADO_DEFAULT, "");
+		this.temporadas = HORAS_ESTIMADAS_DEFAULT;
 		this.creador = creador;
 	}
 	
 	public Serie(String titulo, int temporadas, boolean entregado, String genero, String creador) {
-		
-		this.titulo = titulo;
+		super(titulo, entregado, genero);
 		this.temporadas = temporadas;
-		this.entregado = entregado;
-		this.genero = genero;
 		this.creador = creador;
 	}
 	

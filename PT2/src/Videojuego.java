@@ -1,10 +1,7 @@
 
 public class Videojuego extends Producto {
 	
-	private String titulo;
 	private int horasEstimadas;
-	private boolean entregado;
-	private String genero;
 	private String compania;
 	
 	private static final int HORAS_ESTIMADAS_DEFAULT = 10;
@@ -12,28 +9,24 @@ public class Videojuego extends Producto {
 	
 
 	public Videojuego() {
+		super("", ENTREGADO_DEFAULT, "");
 		this.titulo = "";
 		this.horasEstimadas = HORAS_ESTIMADAS_DEFAULT;
 		this.entregado = ENTREGADO_DEFAULT;
 		this.genero = "";
 		this.compania = "";
-		
 	}
 	
 	
 	public Videojuego (String titulo, int horasEstimadas) {
-		this.titulo = titulo;
+		super(titulo, ENTREGADO_DEFAULT, "");
 		this.horasEstimadas = horasEstimadas;
-		this.entregado = ENTREGADO_DEFAULT;
-		this.genero = "";
 		this.compania = "";
 	}
 	
 	public Videojuego(String titulo, int horasEstimadas, boolean entregado, String genero, String compania) {
-		this.titulo = titulo;
+		super(titulo, ENTREGADO_DEFAULT, genero);
 		this.horasEstimadas = horasEstimadas;
-		this.entregado = entregado;
-		this.genero = genero;
 		this.compania = compania;
 	}
 
@@ -85,9 +78,9 @@ public class Videojuego extends Producto {
 
 	@Override
 	public int compareTo(Object a) {
-        if (a instanceof Serie) {
-            Serie newSerie = (Serie) a;
-            return Integer.compare(this.horasEstimadas, newSerie.getTemporadas());
+        if (a instanceof Videojuego) {
+            Videojuego newVideojuego = (Videojuego) a;
+            return Integer.compare(this.horasEstimadas, newVideojuego.getHorasEstimadas());
         }
         return 0;
     }
