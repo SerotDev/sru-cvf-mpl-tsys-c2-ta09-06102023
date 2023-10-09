@@ -1,10 +1,10 @@
 public class Serie implements Entregable {
   
-	public String titulo;
-	public int temporadas;
-	public boolean entregado;
-	public String genero;
-	public String creador;
+	private String titulo;
+	private int temporadas;
+	private boolean entregado;
+	private String genero;
+	private String creador;
 	
 	public Serie() {
 		
@@ -25,11 +25,10 @@ public class Serie implements Entregable {
 		this.creador = creador;
 	}
 	
-	public Serie(String titulo, int temporadas, boolean entregado, String genero, String creador) {
+	public Serie(String titulo, int temporadas, String genero, String creador) {
 		
 		this.titulo = titulo;
 		this.temporadas = temporadas;
-		this.entregado = entregado;
 		this.genero = genero;
 		this.creador = creador;
 	}
