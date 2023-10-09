@@ -1,10 +1,17 @@
 
 public abstract class Producto implements Entregable {
 
-	protected int horasEstimadas;
 	protected String titulo;
 	protected boolean entregado;
 	protected String genero;
+
+	
+	
+	public Producto(String titulo, boolean entregado, String genero) {
+		this.titulo = titulo;
+		this.entregado = entregado;
+		this.genero = genero;
+	}
 
 	public void entregar() {
 		this.entregado = true;
