@@ -25,10 +25,11 @@ public class Serie implements Entregable {
 		this.creador = creador;
 	}
 	
-	public Serie(String titulo, int temporadas, String genero, String creador) {
+	public Serie(String titulo, int temporadas, boolean entregado, String genero, String creador) {
 		
 		this.titulo = titulo;
 		this.temporadas = temporadas;
+		this.entregado = entregado;
 		this.genero = genero;
 		this.creador = creador;
 	}
