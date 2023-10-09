@@ -1,4 +1,4 @@
-import java.util.Iterator;
+import java.util.Random;
 
 public class Cine {
 
@@ -11,9 +11,11 @@ public class Cine {
 	private static final int DEFAULT_FILAS = 8;
 	private static final int DEFAULT_COLUMNAS = 9;
 	
-	public Cine() {
+	public Cine(Pelicula pelicula, double precio) {
 		this.filas = DEFAULT_FILAS;
 		this.columnas = DEFAULT_COLUMNAS;
+		this.pelicula = pelicula;
+		this.precio = precio;
 		asientos = new Asiento[this.filas][this.columnas];
 		
 		for (int fila = 0; fila < this.filas; fila++) {
@@ -23,4 +25,22 @@ public class Cine {
 			}
 		}
 	}
+	
+	public void sentarEspectador(Espectador espectador) {
+		Random rand = new Random();
+		boolean sentado = false;
+		
+		while (!sentado) {
+			int fila = rand.nextInt(this.filas);
+			int columna = rand.nextInt(this.columnas);
+			
+			Asiento asiento = asientos[fila][columna];
+			if (asiento.isOcupado() && espectador.getEdad() >= pelicula.getEdadMinima() && espectador.getDinero() >= precio) {
+				asiento.ocupar();
+				System.out.println(espectador.getNombre() + " ha ocupado el asiento " + asiento.getFila() + asiento.getColumna());
+				sentado = true;
+			}
+		}
+	}
+	
 }
