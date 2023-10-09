@@ -1,11 +1,11 @@
 
 public class Electrodomestico {
-	protected int precioBase;
+	protected double precioBase;
 	protected String color;
 	protected char consumoEnergetico;
 	protected int peso;
 	
-	private static final int PRECIO_BASE_DEFAULT = 100;
+	private static final double PRECIO_BASE_DEFAULT = 100;
 	private static final char CONSUMO_ENERGETICO_DEFAULT = 'F';
 	private static final int PESO_DEFAULT = 5;
 	private static final String COLOR_DEFAULT = Color.blanco.name();
@@ -18,14 +18,14 @@ public class Electrodomestico {
 		this.peso = PESO_DEFAULT;
 	}
 	
-	public Electrodomestico(int precio, int peso) {
+	public Electrodomestico(double precio, int peso) {
 		this.precioBase = precio;
 		this.color = COLOR_DEFAULT;
 		this.consumoEnergetico = CONSUMO_ENERGETICO_DEFAULT;
 		this.peso = peso;
 	}
 	
-	public Electrodomestico(int precioBase, String color, char consumoEnergetico, int peso) {
+	public Electrodomestico(double precioBase, String color, char consumoEnergetico, int peso) {
 		this.precioBase = precioBase;
 		this.color = comprobarColor(color);
 		this.consumoEnergetico = comprobarConsumoEnergetico(consumoEnergetico);
@@ -42,7 +42,7 @@ public class Electrodomestico {
 	    return COLOR_DEFAULT;
 	}
 
-	public int getPrecioBase() {
+	public double getPrecioBase() {
 		return precioBase;
 	}
 
@@ -67,7 +67,7 @@ public class Electrodomestico {
 	    return CONSUMO_ENERGETICO_DEFAULT;
 	}
 	
-	public int precioFinal() {
+	public double precioFinal() {
 		int total = 0;
 		total += calcularPrecioPorConsumoEnergetico();
 		total += calcularPrecioPorPeso();
@@ -75,7 +75,7 @@ public class Electrodomestico {
 		
 	}
 	
-	private int calcularPrecioPorPeso() {
+	private double calcularPrecioPorPeso() {
 		if (this.peso >= 0 && this.peso <= 19)
 			return 100;
 		else if (this.peso <= 49)
