@@ -9,8 +9,8 @@ public class MainApp {
 		Serie array_series[] = new Serie[5];
 		
 		sv(array_videojuegos, array_series);
-		/*entregaSV(array_videojuegos, array_series);
-		entregadosSV(array_videojuegos, array_series);*/
+		entregaSV(array_videojuegos, array_series);
+		entregadosSV(array_videojuegos, array_series);
 		printMaxs(array_videojuegos, array_series);
 		
 	}
@@ -59,41 +59,11 @@ public class MainApp {
 	private static void printMaxs(Videojuego[] array_videojuegos, Serie[] array_series) {
 		Videojuego maxHoursVideojuego = getVideojuegoMayorHoras(array_videojuegos);
 		Serie maxTemporadasSerie = getSerieMayorTemporadas(array_series);
-		String maxVideojuego = "El videojuego con más horas de juego es " + maxHoursVideojuego.getTitulo() +  " con " + maxHoursVideojuego.getHorasEstimadas() + " horas estimadas.";
+		String maxVideojuego = "\nEl videojuego con más horas de juego es " + maxHoursVideojuego.getTitulo() +  " con " + maxHoursVideojuego.getHorasEstimadas() + " horas estimadas.";
 		String maxSerie = "La serie con mas temporadas " + maxTemporadasSerie.getTitulo() +  " con " + maxTemporadasSerie.getTemporadas() + " temporadas.";
 		
 		System.out.println(maxVideojuego + "\n" + maxSerie);
 	}
-	
-	/*
-	private static void muestraSV(Videojuego[] array_videojuegos, Serie[] array_series) {
-		// Mostramos el videojuego con mas horas y la serie con más temporadas
-		int posicion_mayor = 0;
-		int valor_mayor = -1;
-		
-		
-		
-		for (int i = 0; i < array_series.length; i++) {
-			if (array_series[i].getTemporadas() > valor_mayor) {
-				valor_mayor = array_series[i].getTemporadas();
-				posicion_mayor = i;
-			}
-		}
-		
-		
-		
-		
-		System.out.println("SERIE CON TEMPORADA MAYOR:\n" + array_series[posicion_mayor].toString());
-		posicion_mayor = 0; //reseteamos variable
-		valor_mayor = -1; //reseteamos variable
-		for (int i = 0; i < array_videojuegos.length; i++) {
-			if (array_videojuegos[i].getHorasEstimadas() > valor_mayor) {
-				valor_mayor = array_videojuegos[i].getHorasEstimadas();
-				posicion_mayor = i;
-			}
-		}
-		System.out.println("VIDEOJUEGO CON HORAS ESTIMADAS MAYOR:\n" + array_videojuegos[posicion_mayor].toString());
-	}*/
 
 	private static void entregadosSV(Videojuego[] array_videojuegos, Serie[] array_series) {
 		//Cuenta cuantas series y videojuegos hay entregados, al contarlos se devuelven
@@ -103,7 +73,7 @@ public class MainApp {
 				System.out.println(array_series[i].toString());
 			}
 		}
-		System.out.println("VIDEOJUEGOS ENTREGADOS:");
+		System.out.println("\nVIDEOJUEGOS ENTREGADOS:");
 		for (int i = 0; i < array_videojuegos.length; i++) {
 			if (array_videojuegos[i].isEntregado()) {
 				System.out.println(array_videojuegos[i].toString());
@@ -119,24 +89,6 @@ public class MainApp {
 				array_series[i].entregar();
 			}
 		}
-	}
-	
-	
-	//co
-	private static int compareSerie(Serie[] array_series) {
-		
-		int compare = 0;
-		
-		for (int i = 0; i < array_series.length; i++) {
-			
-		
-		}
-		
-
-
-		
-		return compare;
-		
 	}
 
 }
