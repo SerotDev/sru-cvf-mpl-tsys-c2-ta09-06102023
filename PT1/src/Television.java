@@ -1,10 +1,10 @@
 
 public class Television extends Electrodomestico {
-	private final int RESOLUCION_DEFAULT = 20;
-	private final boolean SINTONIZADOR_TDT_DEFAULT = false;
-	
 	private int resolucion;
 	private boolean sintonizador_tdt;
+	
+	private final boolean SINTONIZADOR_TDT_DEFAULT = false;
+	private final int RESOLUCION_DEFAULT = 20;
 	
 	public Television() {
 		super();
