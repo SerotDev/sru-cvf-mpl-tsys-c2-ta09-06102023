@@ -5,6 +5,14 @@ public class Libro {
 	private String autor;
 	private int numeroDePaginas;
 	
+	public Libro(String iSBN, String titulo, String autor, int numeroDePaginas) {
+		super();
+		ISBN = iSBN;
+		this.titulo = titulo;
+		this.autor = autor;
+		this.numeroDePaginas = numeroDePaginas;
+	}
+	
 	public String getISBN() {
 		return ISBN;
 	}
@@ -30,9 +38,16 @@ public class Libro {
 		this.numeroDePaginas = numeroDePaginas;
 	}
 	
-	
 	@Override
 	public String toString() {
 		return "el libro con ISBN " + ISBN + " creado por el autor " + autor + " tiene " + numeroDePaginas + " páginas.";
 	}
+	
+	public int compareTo(Object a) {
+        if (a instanceof Libro) {
+            Libro newLibro = (Libro) a;
+            return Integer.compare(this.numeroDePaginas, newLibro.getNumeroDePaginas());
+        }
+        return 0;
+    }
 }
