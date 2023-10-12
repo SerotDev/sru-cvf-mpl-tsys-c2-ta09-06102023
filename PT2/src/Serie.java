@@ -10,7 +10,6 @@ public class Serie extends Producto {
 		super("", ENTREGADO_DEFAULT, "");
 		this.temporadas  = HORAS_ESTIMADAS_DEFAULT;
 		this.creador = "";
-		
 	}
 	
 	public Serie(String titulo, String creador) {
@@ -74,3 +73,4 @@ public class Serie extends Producto {
     }
 
 }
+
