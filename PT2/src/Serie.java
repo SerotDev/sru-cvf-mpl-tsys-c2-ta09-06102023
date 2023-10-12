@@ -1,35 +1,28 @@
-
-public class Serie {
-
-	public String titulo;
-	public int temporadas;
-	public boolean entregado;
-	public String genero;
-	public String creador;
+public class Serie extends Producto {
+  
+	private int temporadas;
+	private String creador;
+	
+	private static final int HORAS_ESTIMADAS_DEFAULT = 3;
+	private static final boolean ENTREGADO_DEFAULT = false;
 	
 	public Serie() {
-		
-		this.titulo = "";
-		this.temporadas  = 3;
-		this.entregado = false;
-		this.genero = "";
+		super("", ENTREGADO_DEFAULT, "");
+		this.temporadas  = HORAS_ESTIMADAS_DEFAULT;
 		this.creador = "";
-		
 	}
 	
-	public Serie(String titulo, int temporadas, boolean entregado, String genero, String creador) {
-		
-		this.titulo = titulo;
-		this.temporadas = temporadas;
-		this.entregado = entregado;
-		this.genero = genero;
+	public Serie(String titulo, String creador) {
+		super(titulo, ENTREGADO_DEFAULT, "");
+		this.temporadas = HORAS_ESTIMADAS_DEFAULT;
 		this.creador = creador;
 	}
 	
-	Serie defecto = new Serie();
-	Serie dark = new Serie("Dark", temporadas, entregado, genero, "Random");
-	Serie darki = new Serie("Dark", 5, entregado, "Drama", "Random");
-	
+	public Serie(String titulo, int temporadas, boolean entregado, String genero, String creador) {
+		super(titulo, entregado, genero);
+		this.temporadas = temporadas;
+		this.creador = creador;
+	}
 	
 	public String getTitulo() {
 		return titulo;
@@ -69,6 +62,15 @@ public class Serie {
 		return "Serie [titulo= " + titulo + ", temporadas= " + temporadas + ", entregado= " + entregado + ", genero= "
 				+ genero + ", creador= " + creador + "]";
 	}
+	
+	@Override
+	public int compareTo(Object a) {
+        if (a instanceof Serie) {
+            Serie newSerie = (Serie) a;
+            return Integer.compare(this.temporadas, newSerie.getTemporadas());
+        }
+        return 0;
+    }
 
 }
 
