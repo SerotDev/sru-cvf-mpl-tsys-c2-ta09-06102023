@@ -33,9 +33,6 @@ public class Profesor extends Persona {
 		this.asignatura = asignatura;
 	}
 
-	public void setAsignatura() {
-		this.asignatura = asignatura;
-	}
 
 	@Override
 	public boolean ausentarse() {

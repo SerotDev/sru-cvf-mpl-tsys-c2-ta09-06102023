@@ -22,6 +22,8 @@ public class MainApp {
 		ecuacion.calcular();
 		ecuacion.obtenerRaices();
 		ecuacion.obtenerRaiz();
+		
+		sc.close();
 	}
 
 }
