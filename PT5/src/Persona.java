@@ -5,6 +5,23 @@ public abstract class Persona {
 	protected int edad;
 	protected char sexo;	
 	
+	private final char SEXO_DEFAULT = 'H';
+	private final int EDAD_DEFAULT = 0;
+	
+	
+	public Persona() {
+		this.nombre = "";
+		this.edad = EDAD_DEFAULT;
+		this.sexo = SEXO_DEFAULT;
+	}
+	
+	
+	public Persona(String nombre, int edad, char sexo) {
+		this.nombre = nombre;
+		this.edad = edad;
+		this.sexo = sexo;
+	}
+
 	public String getNombre() {
 		return nombre;
 	}
@@ -29,7 +46,9 @@ public abstract class Persona {
 		this.sexo = sexo;
 	}
 	
-	public abstract boolean novillos();
+	public abstract boolean ausentarse();
+	
+	
 
 }
 
