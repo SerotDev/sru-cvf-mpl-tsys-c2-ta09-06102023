@@ -25,9 +25,8 @@ public class Estudiante extends Persona {
 		return calificacion;
 	}
 
-	public void setCalificacion() {
-
-		this.calificacion = calificacion;
+	public void setCalificacion(int calification) {
+		this.calificacion = calification;
 	}
 
 	@Override
